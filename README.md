@@ -41,7 +41,7 @@ This updates `src/actions_gen.ts` with typed interfaces derived from your `plugi
 Copy the plugin into BranchKit's plugin directory:
 
 ```bash
-cp -r . ~/Library/Application\ Support/BranchKitDev/plugins/hello/
+cp -r . ~/Library/Application\ Support/BranchKitDev/plugins/helloworld/
 ```
 
 Restart BranchKit. Your plugin loads automatically — no build step needed. BranchKit runs `run.sh` which invokes `bun run src/index.ts` directly.
