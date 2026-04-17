@@ -38,13 +38,23 @@ This updates `src/actions_gen.ts` with typed interfaces derived from your `plugi
 
 ### 4. Install
 
-Copy the plugin into BranchKit's plugin directory:
+Symlink your plugin directory into BranchKit's plugin directory:
 
 ```bash
-cp -r . ~/Library/Application\ Support/BranchKitDev/plugins/helloworld/
+ln -s $(pwd) ~/Library/Application\ Support/BranchKit/plugins/helloworld
 ```
 
 Restart BranchKit. Your plugin loads automatically — no build step needed. BranchKit runs `run.sh` which invokes `bun run src/index.ts` directly.
+
+### 5. Development loop
+
+Because you installed via symlink, your working directory is the live plugin. Edit `src/index.ts`, then just restart:
+
+```bash
+killall BranchKit; open /Applications/BranchKit.app
+```
+
+No build step, no copy step — BranchKit reads your TypeScript source directly on each launch.
 
 ## Files
 
