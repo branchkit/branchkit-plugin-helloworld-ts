@@ -1,0 +1,8 @@
+{
+  "name": "hello-plugin-ts",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@branchkit/plugin-sdk-ts": "github:branchkit/plugin-sdk-ts"
+  }
+}
