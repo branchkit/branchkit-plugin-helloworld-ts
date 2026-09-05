@@ -1,0 +1,33 @@
+import { describe, test, expect } from "bun:test";
+import { Harness } from "@branchkitdev/plugin-sdk-ts/harness";
+
+// The tests exercise what this plugin OWNS: its exact-phrase command and
+// the params it carries. The "hello <apps>" capture is deliberately not
+// unit-tested — it matches against the apps collection, which the system
+// plugin provides in a running BranchKit; verify it live with
+// `branchkit-cli dev say "hello safari" --simulate`.
+
+describe("Helloworld", () => {
+  test("hello branchkit command matches", async () => {
+    const h = await Harness.start(".");
+    try {
+      const result = await h.mustSimulateCommand("hello branchkit");
+      expect(result.actionType()).toBe("helloworld.greet");
+
+      const params = result.actionParams<{ name: string }>();
+      expect(params.name).toBe("BranchKit");
+    } finally {
+      await h.stop();
+    }
+  });
+
+  test("unknown phrase does not match", async () => {
+    const h = await Harness.start(".");
+    try {
+      const result = await h.simulateCommand("goodbye branchkit");
+      expect(result.matched).toBe(false);
+    } finally {
+      await h.stop();
+    }
+  });
+});

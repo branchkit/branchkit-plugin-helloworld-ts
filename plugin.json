@@ -1,10 +1,12 @@
 {
+  "$schema": "https://branchkit.dev/schemas/manifest.json",
   "id": "helloworld",
-  "name": "Hello World",
-  "version": "1.0.0",
-  "description": "A minimal BranchKit plugin that types a greeting at the cursor.",
+  "name": "Helloworld",
+  "version": "0.1.0",
+  "min_api_version": "0.1.0",
+  "description": "A BranchKit plugin",
   "author": "Your Name",
-  "capabilities": ["input"],
+  "privileges": ["input"],
   "run": "./run.sh",
   "action_prefix": "helloworld",
   "action_types": {
@@ -19,10 +21,13 @@
       ]
     }
   },
-  "store_data": {
+  "consumes": {
+    "collections": ["apps"]
+  },
+  "collection_data": {
     "voice_commands": "commands.json",
     "keybinds": {
-      "alt+shift+h": "helloworld greet"
+      "alt+shift+h": { "action": "helloworld.greet", "name": "BranchKit" }
     }
   },
   "implements": {
