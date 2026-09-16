@@ -13,7 +13,7 @@
     },
   },
   "packages": {
-    "@branchkitdev/plugin-sdk-ts": ["@branchkitdev/plugin-sdk-ts@github:branchkit/plugin-sdk-ts#abe3ed9", {}, "branchkit-plugin-sdk-ts-abe3ed9", "sha512-YC7x5X7c9KVdcuZHebTDbb5pkxAwuJKfoMOFtnabFP16YkHtrA48x4iGgQbz0r+bNaw42MD0YLxUF1c5irJ8qA=="],
+    "@branchkitdev/plugin-sdk-ts": ["@branchkitdev/plugin-sdk-ts@github:branchkit/plugin-sdk-ts#78aa2dd", {}, "branchkit-plugin-sdk-ts-78aa2dd", "sha512-Br5iZ3be2wvUtlFxt0EvSVsIjvc6Cja+wRWHl3RCFxcpbHeu/o80q/urFw/BbS/CTHSVbQi6tt1RYwCXRVy5Pw=="],
 
     "@types/bun": ["@types/bun@1.4.1", "", { "dependencies": { "bun-types": "1.4.1" } }, "sha512-0AVGiTXGajf1rgKom3N+c5L7CBxuoyyv1i44M0nX4UDK0G/fnRAMiri93nHuVPIb429KKtAgj7HatVmmOjeQLA=="],
 
