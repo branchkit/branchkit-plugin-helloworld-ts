@@ -15,9 +15,12 @@ plugin.handleAction<GreetParams>("helloworld.greet", async (req) => {
   await plugin.call("input.type_text", { text: `Hello, ${name}!` });
 });
 
-plugin.handle("render_settings", async (params) => {
-  return {
-    html: `<div style="padding: 16px; font-family: system-ui;">
+// One renderer per tab declared in plugin.json. The SDK owns the
+// render_settings hook: it dispatches on the tab key and re-renders the
+// tab through the settings stream whenever a method returns.
+plugin.settingsTab("getting_started", () => {
+  return `<div style="padding: 16px; font-family: system-ui;">
+
   <h2 style="margin: 0 0 12px 0;">Helloworld</h2>
   <p style="color: #888; margin: 0 0 16px 0;">A BranchKit plugin</p>
 
@@ -32,8 +35,8 @@ plugin.handle("render_settings", async (params) => {
       <td style="padding: 6px 12px; color: #888;">Types "Hello, &lt;name&gt;!" with any spoken word</td>
     </tr>
   </table>
-</div>`,
-  };
+</div>`;
 });
+
 
 await plugin.run();
