@@ -4,3 +4,4 @@ helloworld-plugin
 helloworld-plugin.exe
 .branchkit-build/
 .building-*
+dist/
