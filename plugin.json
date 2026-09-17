@@ -7,7 +7,13 @@
   "description": "A BranchKit plugin",
   "author": "Your Name",
   "privileges": ["input"],
-  "run": "./run.sh",
+  "dev": {
+    "build": [
+      ["branchkit-cli", "dev", "build"]
+    ],
+    "build_dir": "."
+  },
+  "run": "./helloworld-plugin",
   "action_prefix": "helloworld",
   "action_types": {
     "greet": {
